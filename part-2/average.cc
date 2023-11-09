@@ -9,10 +9,10 @@
 
 int main(int argc, char* argv[]) {
   std::vector<std::string> arguments{argv, argv + argc};
-  int size{static_cast<int>(arguments.size())-1};
+  int size{static_cast<int>(arguments.size()) - 1};
   // Validate that there is at least one command line argument.
   // If not, print an error message and return a non-zero value.
-  if (size < 1 ) {
+  if (size < 1) {
     std::cout << "error: you must supply at least one number \n";
     return 1;
   }
@@ -28,15 +28,13 @@ int main(int argc, char* argv[]) {
   // Each argument is a std::string. You will need to convert each string into
   // a number with the std::stod or std::stof function.
 
-  for (std::string argument : arguments){
-     if(first) {
+  for (std::string argument : arguments) {
+    if (first) {
       first = false;
-     }
-      else {
+    } else {
       double number = std::stod(argument);
       sum = sum + number;
-     }
-
+    }
   }
 
   // After the loop has finished summing the arguments, calculate the
